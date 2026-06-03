@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.cabecalho{
+    width: 95vw;
+    margin: 10px ;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+    gap: 250px;
+    background-color: #ded9d9;
+}
+
+.logo{
+    
+    align-items: center;
+   
+   /* gap: 15px;*/
+    
+}
+
+.logo img{
+    width: 200px;
+    height: auto;
+}
+
+nav{
+    display: flex;
+    gap: 20px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
