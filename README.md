@@ -24,7 +24,6 @@ O projeto foi construído do zero utilizando as seguintes tecnologias e ferramen
 * **JavaScript (ES6):** Responsável pela lógica de interatividade do site:
   * Manipulação do DOM para ativar/desativar o Modo Escuro.
   * Captura de dados do formulário e conversão em texto codificado para envio direto para a API do WhatsApp.
-* **Git & Git Bash:** Ferramentas essenciais utilizadas para o controle de versão, gerenciamento do histórico de commits e deploy dos arquivos para o repositório remoto.
 * **Google Fonts:** Integração da fonte **Roboto** para garantir uma tipografia limpa, profissional e legível em qualquer dispositivo.
 
 ---
@@ -50,9 +49,16 @@ aulaweb/
 │
 ├── style/
 │   └── style.css       # Estilização geral, Flexbox e Responsividade
-
-👤 Autor
-Desenvolvido por Laysla como parte do projeto prático de desenvolvimento web.
 │
 └── assets/
     └── img/            # Imagens dos serviços, resultados e profissionais
+
+👤 Autor
+Desenvolvido por Laysla como parte do projeto prático de desenvolvimento web.
+
+
+
+
+
+
+
