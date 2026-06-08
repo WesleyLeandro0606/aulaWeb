@@ -5,26 +5,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultorio Dentario</title>
-    <link rel="stylesheet" href="./style/style.css">
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="./style/style.css">
+
+</head>
+<script src="./assets/js/script.js"></script>
 <body>
     <header class="cabecalho">
         <div class="logo">
-            <img src="./assets/img/logo.png" alt="Logo do Consultório Dentário">
+            <img src="./assets/img/logo3.png" alt="Logo do Consultório Dentário">
         </div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#"> Nossos Serviços</a>
-            <a href="#">Quem Somos</a>
-            <a href="#">Contato</a>
-            <a href="#">Atendimento de Urgência</a>
-
+            <a href="#home">Home</a> 
+            <a href="#servicos">Nossos Serviços</a> 
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#contato">Contato</a>
+            
         </nav>
-
-
+        
+        <button id="toggle-tema" class="btn-tema">🌓 Alternar Tema</button>
+        
+        <button id="btn-whats-topo">Entrar em Contato</button>
     </header>
+    
+    <main>  
+        <section id="home" class="home">
+    <div class="conteudo-home">
+        <h1>Clínica Geral e Prevenção <br>Aqui você encontra tudo para seu tratamento dentário</h1>
+        <p>Conforto e novas tecnologias para o seu bem-estar <br><br> 
+        Estamos em constante atualização para garantir a eficácia do seu tratamento e bem estar nas suas consultas</p>
+        <button id="btn-whats-home">Agende sua Consulta</button>
+    </div>
+</section>
 
+        
+
+        <section class="nossos-servicos">
+            <h2 id="servicos">Temos os tratamentos que você precisa!</h2>
+            <div class="container-cards">
+                <div class="servicos">
+                    <img src="./assets/img/logo3.png" alt="Clareamento Dental">
+                    <h3>Clareamento Dental</h3>
+                </div>
+
+                <div class="servicos">
+                    <img src="./assets/img/logo3.png" alt="Ortodontia">
+                    <h3>Ortodontia</h3>
+                </div>
+
+                <div class="servicos">
+                    <img src="./assets/img/logo3.png" alt="Implantes Dentários">
+                    <h3>Implantes </h3>
+                </div>
+
+                <div class="servicos">
+                    <img src="./assets/img/logo3.png" alt="Endodontia">
+                    <h3>Limpeza e prevenção</h3>
+                </div>
+            </div> 
+        </section>
+
+        <section id="quem-somos" class="quem-somos">
+            <h2>Quem Somos</h2>
+            <p class="texto-quem-somos">
+                Somos um consultório dentário dedicado a proporcionar cuidados odontológicos de alta qualidade. 
+                Nossa equipe de profissionais experientes está comprometida em oferecer tratamentos personalizados.
+            </p>
+
+            <div class="container-imagens-quem-somos">
+                <div class="card-dentista-quem-somos">
+                    <div class="foto-box">
+                        <img src="./assets/img/andre.png" alt="Dr. André">
+                    </div>
+                    <h3>Dr. André</h3>
+                    <p>Especialista em Ortodontia com mais de 10 anos de experiência, focado em alinhar sorrisos com as tecnologias mais modernas.</p>
+                </div>
+
+                <div class="card-dentista-quem-somos">
+                    <div class="foto-box">
+                        <img src="./assets/img/carlos.png" alt="Dr. Carlos">
+                    </div>
+                    <h3>Dr. Carlos</h3>
+                    <p>Especialista em Implantes e Próteses, dedicado a devolver a autoestima e a mastigação perfeita para os pacientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <h4>Veja alguns resultados</h4>
+
+        <section class="resultados">
+            <div class="container-imagens-resultados">
+                <div class="card-resultados">
+                    <img src="./assets/img/clareamento.jpg" alt="Resultado 1">
+                </div>
+                <div class="card-resultados">
+                    <img src="./assets/img/ortodontia.jpg" alt="Resultado 2">
+                </div>
+                <div class="card-resultados">
+                    <img src="./assets/img/implante.jpg" alt="Resultado 3">
+                </div>
+                <div class="card-resultados">
+                    <img src="./assets/img/limpeza.jpg" alt="Resultado 4">
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos">
+            <h5>Pacientes satisfeitos</h5>
+            <div class="container-depoimentos">
+                <div class="card-depoimentos">
+                    <p>"Excelente atendimento e resultados incríveis! Recomendo a todos."</p>
+                    <h3>Maria S.</h3>
+                </div>
+                <div class="card-depoimentos">
+                    <p>"Profissionais atenciosos e ambiente acolhedor. Minha experiência foi ótima!"</p>
+                    <h3>João P.</h3>
+                </div>
+                <div class="card-depoimentos">
+                    <p>"Fiquei muito satisfeito com o tratamento. O consultório é moderno e eficiente."</p>
+                    <h3>Ana L.</h3>
+                </div>
+            </div>
+        </section> <section id="contato" class="contato">
+            <h2>Agende sua Consulta</h2>
+            <p>Preencha os campos abaixo e nossa equipe entrará em contato para confirmar o seu horário.</p>
+
+            <div class="container-form">
+                <form action="#" method="POST" class="form-agendamento">
+                    <div class="grupo-campo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Ex: joao@email.com" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Ex: Gostaria de agendar uma consulta..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Solicitar Agendamento</button>
+                </form>
+            </div>
+        </section> <footer class="rodape">
+            <div class="container-rodape">
+                <div class="coluna-rodape">
+                    <h3>Nossa Clínica</h3>
+                    <p>Av. Paulista, 1000 - Conjunto 52</p>
+                    <p>Bela Vista - São Paulo / SP</p>
+                    <p>CEP: 01310-100</p>
+                </div>
+
+                <div class="coluna-rodape">
+                    <h3>Contato</h3>
+                    <p>Telefone: (11) 3214-5678</p>
+                    <p>WhatsApp: (11) 99999-8888</p>
+                    <p>E-mail: contato@sorrisointegral.com.br</p>
+                </div>
+
+                <div class="coluna-rodape">
+                    <h3>Siga-nos</h3>
+                    <div class="redes-sociais">
+                        <a href="#" target="_blank" class="link-rede">Instagram</a>
+                        <a href="#" target="_blank" class="link-rede">Facebook</a>
+                        <a href="#" target="_blank" class="link-rede">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="direitos-autorais">
+                <p> 2026 Sorriso Perfeito Odontologia. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+               
+    </main>
+
+    <script src="./script/script.js"></script>
 </body>
 
 </html>

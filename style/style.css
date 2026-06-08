@@ -1,45 +1,639 @@
-*{
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E FONTES
+   ========================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+
+body {
+    /* Aplicando a fonte do Google Fonts em todo o site */
+    font-family: 'Roboto', Arial, sans-serif; 
+    background-color: #F3F4F6; 
+    color: #333333;
+    overflow-x: hidden;
 }
-.cabecalho{
-    width: 95vw;
-    margin: 10px ;
-    padding: 20px;
+
+/* ==========================================
+   CABEÇALHO (FLEXBOX)
+   ========================================== */
+.cabecalho {
+    width: 100%;              
+    margin: 0;                
+    padding: 20px 40px;       
+    display: flex;             /* Estrutura em Flexbox */
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cabecalho nav {
+    display: flex;             /* Links internos também usam flexbox */
+    gap: 25px;
+}
+
+.cabecalho nav a {
+    color: #90BE6D; 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease; /* Efeito visual suave na troca de cor */
+}
+
+.cabecalho nav a:hover {
+    color: #000000; 
+}
+
+.logo {
     display: flex;
     align-items: center;
-    
-    justify-content: space-between;
-    gap: 250px;
-    background-color: #ded9d9;
 }
 
-.logo{
-    
-    align-items: center;
-   
-   /* gap: 15px;*/
-    
-}
-
-.logo img{
-    width: 200px;
+.logo img {
+    width: 180px;
     height: auto;
 }
 
-nav{
-    display: flex;
-    gap: 20px;
-    
+/* ==========================================
+   BOTÕES (EFEITOS VISUAIS SUAVES)
+   ========================================== */
+button {
+    padding: 12px 24px;
+    background-color: #90BE6D; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(144, 190, 109, 0.2);
+    /* Transição suave para cor, sombra e movimento */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
 }
 
-nav a{
-    text-decoration: none;
+button:hover {
+    background-color: #76a453; 
+    box-shadow: 0 6px 12px rgba(118, 164, 83, 0.3);
+    transform: translateY(-2px); /* Botão "sobe" de leve ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+}
+
+/* ==========================================
+   BANNER HOME
+   ========================================== */
+.home {
+    width: 100%;
+    min-height: 75vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/home.jpg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.home h1 {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 900; /* Peso extra-negrito do Google Fonts */
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.home p {
+    color: #F3F4F6; 
+    font-size: 18px;
+    font-weight: 300; /* Peso leve para leitura confortável */
+    max-width: 750px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   SEÇÃO SERVIÇOS (FLEXBOX + CARDS DINÂMICOS)
+   ========================================== */
+.nossos-servicos {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #F3F4F6; 
+}
+
+h2 {
+    color: #333;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px; 
+    width: 100%;
+    text-align: center; 
+}
+
+.container-cards {
+    display: flex;          
+    justify-content: center; 
+    gap: 30px;              
+    flex-wrap: wrap;        
+    padding: 20px 0;
+    width: 100%;
+}
+
+.servicos {
+    background-color: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    width: 280px;           
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    text-align: center;      
+    gap: 15px; 
+    /* Transição suave para o efeito de "flutuar" do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.servicos:hover {
+    transform: translateY(-5px); /* O card flutua para cima */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Sombra aumenta suavemente */
+}
+
+.servicos img {
+    width: 65px;    
+    height: 65px;   
+    object-fit: contain;       
+    margin-bottom: 5px;       
+}
+
+.servicos h3 {
+    color: #90BE6D; 
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   SEÇÃO QUEM SOMOS
+   ========================================== */
+.quem-somos {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.texto-quem-somos {
+    max-width: 750px;       
     color: #555;
-    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.7;       
+    margin-bottom: 60px;    
+}
+
+.container-imagens-quem-somos {
+    display: flex;
+    justify-content: center; 
+    gap: 50px;               
+    flex-wrap: wrap;         
+    width: 100%;
+}
+
+.card-dentista-quem-somos {
+    width: 300px;            
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+}
+
+.foto-box img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #90BE6D; 
+    box-shadow: 0 6px 15px rgba(144, 190, 109, 0.15);
+}
+
+.card-dentista-quem-somos h3 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+.card-dentista-quem-somos p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   SEÇÃO RESULTADOS (CSS GRID OPCIONAL / ROW FLEX)
+   ========================================== */
+h4 {
+    color: #333;
+    font-size: 28px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.resultados {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #F3F4F6; 
+}
+
+.container-imagens-resultados {
+    display: flex;             
+    justify-content: center;    
+    gap: 25px;                 
+    flex-wrap: wrap;           
+    width: 100%;
+    max-width: 1200px;         
+    margin: 0 auto;            
+}
+
+.card-resultados {
+    width: 260px;              
+    height: 260px;             
+    overflow: hidden;          
+    border-radius: 14px;       
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+}
+
+.card-resultados:hover {
+    transform: scale(1.04); /* Zoom ultra suave */
+}
+
+.card-resultados img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+}
+
+/* ==========================================
+   SEÇÃO DEPOIMENTOS
+   ========================================== */
+h5 {
+    color: #333;
+    font-size: 28px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.depoimentos {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #ffffff; 
+}
+
+.container-depoimentos {
+    display: flex;             
+    justify-content: center;   
+    gap: 30px;                 
+    flex-wrap: wrap;           
+    width: 100%;
+    max-width: 1200px;         
+    margin: 0 auto;            
+}
+
+.card-depoimentos {
+    background-color: #F3F4F6; 
+    padding: 35px 30px;
+    border-radius: 14px;       
+    width: 320px;              
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between; 
+    transition: transform 0.3s ease;
+}
+
+.card-depoimentos:hover {
+    transform: translateY(-3px);
+}
+
+.card-depoimentos p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;        
+    margin-bottom: 25px;
+}
+
+.card-depoimentos h3 {
+    font-size: 16px;
+    color: #90BE6D;            
+    font-weight: 700;
+    text-align: right;         
+}
+
+/* ==========================================
+   SEÇÃO CONTATO & FORMULÁRIO
+   ========================================== */
+.contato {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contato p {
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.container-form {
+    width: 100%;
+    max-width: 500px; 
+    background-color: #F3F4F6; 
+    padding: 45px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.form-agendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    text-align: left;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    border-color: #90BE6D;
+    box-shadow: 0 0 0 3px rgba(144, 190, 109, 0.15); /* Brilho suave ao focar */
+}
+
+/* ==========================================
+   RODAPÉ (FLEXBOX)
+   ========================================== */
+.rodape {
+    background-color: #1e1e1e; 
+    color: #ffffff;            
+    padding: 60px 20px 25px 20px;
+}
+
+.container-rodape {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;               
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;                
+    padding-bottom: 40px;
+    border-bottom: 1px solid #333; 
+}
+
+.coluna-rodape {
+    flex: 1;
+    min-width: 250px; 
+}
+
+.coluna-rodape h3 {
+    color: #90BE6D;   
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.coluna-rodape p {
+    color: #9ca3af;      
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 6px 0;
+}
+
+.redes-sociais {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;
+}
+
+.link-rede {
+    color: #9ca3af;
+    text-decoration: none;  
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.link-rede:hover {
+    color: #90BE6D; 
+    transform: translateX(3px); /* Move levemente para o lado no hover */
+}
+
+.direitos-autorais {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.direitos-autorais p {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ==========================================
+   BOTÃO DO TEMA (INTERATIVO)
+   ========================================== */
+.btn-tema {
+    background-color: #90BE6D; 
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* ==========================================
+   DARK MODE ADAPTADO
+   ========================================== */
+body.dark-mode {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+
+body.dark-mode .cabecalho {
+    background-color: #1f2937;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .nossos-servicos,
+body.dark-mode .resultados {
+    background-color: #111827;
+}
+
+body.dark-mode .quem-somos,
+body.dark-mode .contato,
+body.dark-mode .depoimentos {
+    background-color: #1f2937; 
+}
+
+body.dark-mode h2, 
+body.dark-mode h4, 
+body.dark-mode h5,
+body.dark-mode .card-dentista-quem-somos h3 {
+    color: #ffffff; 
+}
+
+body.dark-mode .texto-quem-somos,
+body.dark-mode .card-dentista-quem-somos p,
+body.dark-mode .contato p,
+body.dark-mode .card-depoimentos p {
+    color: #9ca3af; 
+}
+
+body.dark-mode .servicos,
+body.dark-mode .card-depoimentos,
+body.dark-mode .container-form {
+    background-color: #374151;
+}
+
+body.dark-mode .grupo-campo label {
+    color: #e5e7eb;
+}
+
+body.dark-mode .grupo-campo input,
+body.dark-mode .grupo-campo textarea {
+    background-color: #1f2937;
+    color: #fff;
+    border: 1px solid #4b5563;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE (TABLETS - Telas até 992px)
+   ========================================== */
+@media (max-width: 992px) {
+    .cabecalho {
+        gap: 40px; /* Reduz o espaço no menu para não amassar */
+        padding: 20px;
+    }
+
+    .home h1 {
+        font-size: 32px; /* Diminui um pouco o título principal */
+    }
+
+    .container-imagens-resultados {
+        gap: 15px; /* Aproxima as fotos dos resultados */
+    }
+    
+    .card-resultados {
+        width: 220px; /* Encolhe levemente as fotos para caberem melhor */
+        height: 220px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVIDADE (SMARTPHONES - Telas até 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* CABEÇALHO: Transforma o menu em lista vertical */
+    .cabecalho {
+        flex-direction: column; /* Coloca o Logo, Menu e Botão um embaixo do outro */
+        gap: 20px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .cabecalho nav {
+        flex-direction: column; /* Links do menu ficam empilhados */
+        gap: 15px;
+    }
+
+    /* HOME */
+    .home {
+        min-height: 60vh;
+        padding: 40px 15px;
+    }
+
+    .home h1 {
+        font-size: 26px; /* Título menor para não quebrar feio no celular */
+    }
+
+    .home p {
+        font-size: 15px;
+    }
+
+    /* SEÇÕES E CARDS */
+    h2, h4, h5 {
+        font-size: 24px; /* Ajusta o tamanho dos títulos do site */
+    }
+
+    .container-cards, 
+    .container-imagens-quem-somos, 
+    .container-depoimentos {
+        gap: 20px; /* Diminui o espaçamento geral */
+    }
+
+    .servicos, 
+    .card-dentista-quem-somos, 
+    .card-depoimentos {
+        width: 100%; /* Os cards agora ocupam quase a largura toda da tela do celular */
+        max-width: 340px; /* Limita para não ficarem esticados demais */
+    }
+
+    .card-resultados {
+        width: 140px; /* Deixa as fotos pequenas para caberem de duas em duas na tela */
+        height: 140px;
+    }
+
+    /* FORMULÁRIO */
+    .container-form {
+        padding: 30px 20px; /* Reduz o espaço interno da caixinha do formulário */
+    }
+
+    /* RODAPÉ */
+    .container-rodape {
+        flex-direction: column; /* Colunas de informação viram linhas verticais */
+        text-align: center;
+        gap: 35px;
+    }
+
+    .redes-sociais {
+        align-items: center; /* Centraliza os links das redes sociais */
+    }
 }
